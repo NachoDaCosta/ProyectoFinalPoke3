@@ -1,0 +1,190 @@
+{
+  "pokemones": [
+
+  {
+  "name": "Aron",
+  "id": "304",
+  "image":"./Imagenes/aron.png",
+  "type": "Steel",
+  "weight": "60,0kg",
+  "height": "0,4m",
+  "moves": "Sturdy Rock-Head",
+  "description" : "It eats iton ore - and sometimes railroad tracks - to build up the steek armor thay protects its body",
+  "HP": 50,
+  "ATK": 70,
+  "DEF": 100,
+  "SATK": 40,
+  "SDEF": 40,
+  "SPD":30,
+  "background":"steelbg",
+  "type2":"rock",
+  "background2":"rockbg"
+   
+},
+
+{
+  "name": "Bulbasaur",
+  "id": "001",
+  "image":"./Imagenes/bulbasaur.png",
+  "type": "grass",
+  "weight": "6,9kg",
+  "height": "0,7m",
+  "moves": "Chriorophyll Overgrow",
+  "description" : "There is a plant seed on its bacl right from the day this Pokémon is born. The seed sloqly grows larger",
+  "HP": 45,
+  "ATK": 49,
+  "DEF": 49,
+  "SATK": 65,
+  "SDEF": 65,
+  "SPD": 45 ,
+  "background":"grassbg",
+  "type2":"Poison",
+  "background2":"poisonbg"
+},
+
+{
+  "name": "Butterfree",
+  "id": "012",
+  "image":"./Imagenes/butterfree.png",
+  "type": "bug",
+  "weight": "32,0kg",
+  "height": "1,1m",
+  "moves": "Compound-Eyes Tinted-Lens",
+  "description" : "In battle it flaps its wings at great speed to relase highly toxic dust into the air",
+  "HP": 60,
+  "ATK": 45,
+  "DEF": 50,
+  "SATK": 90,
+  "SDEF": 80,
+  "SPD": 70,
+  "background":"bugbg",
+  "type2":"flying",
+  "background2":"flyingbg"
+},
+
+  {
+  "name": "Charmander",
+  "id": "004",
+  "image":"./Imagenes/charmander.png",
+  "type": "fire",
+  "weight": "8,5kg",
+  "height": "0,6m",
+  "moves": "Mega-Punch Fire-Punch",
+  "description" : "It has a preference for hot things. When it rains, steam is said to spout from the tip os its tail",
+  "HP": 39,
+  "ATK": 52,
+  "DEF": 43,
+  "SATK": 60,
+  "SDEF": 50,
+  "SPD": 65,
+  "background":"firebg",
+  "type2":"",
+  "types":"onetype"
+},
+
+{
+
+  "name": "Ditto",
+  "id": "132",
+  "image":"./Imagenes/ditto.png",
+  "type": "normal",
+  "weight": "4,0kg",
+  "height": "0,3m",
+  "moves": "Limber Imposter",
+  "description" : "It can reconstitue its entire cellular structure to change into what it sees, but it returns when it relaxes",
+  "HP": 48,
+  "ATK": 48,
+  "DEF": 48,
+  "SATK": 48,
+  "SDEF": 48,
+  "SPD": 48,
+  "background":"normalbg",
+  "type2":"" ,
+  "types":"onetype"
+},
+
+{
+  "name": "Gastly",
+  "id": "092",
+  "image":"./Imagenes/gastly.png",
+  "type": "ghost",
+  "weight": "0,1kg",
+  "height": "1,3m",
+  "moves": "Levitate",
+  "description" : "Born from grases, anyone would faint if engulled by its gaseous body, which contains poison.",
+  "HP": 30,
+  "ATK": 35,
+  "DEF": 30,
+  "SATK":100,
+  "SDEF": 35,
+  "SPD": 80,
+  "background":"ghostbg",
+  "type2":"poison", 
+  "background2":"poisonbg"
+  
+},
+
+{
+
+  "name": "Mew",
+  "id": "152",
+  "image":"./Imagenes/mew.png",
+  "type": "Psychic",
+  "weight": "4,0kg",
+  "height": "0,4m",
+  "moves": "Synchronize",
+  "description" : "When viewed through a microscope, this pokemon's short, fine, delicate hair can be seen.",
+  "HP": 100,
+  "ATK": 100,
+  "DEF": 100,
+  "SATK": 100,
+  "SDEF": 100,
+  "SPD": 100,
+  "background":"psychicbg",
+  "type2":"",
+  "types":"onetype" 
+},
+
+{
+  "name": "Pikachu",
+  "id": "025",
+  "image":"./Imagenes/pikachu.png",
+  "type": "electric",
+  "weight": "6,0kg",
+  "height": "0,4m",
+  "moves": "Mega-Punch Pay-Day",
+  "description" : "Pikachu that can regenerate powerful electricity have ckeek sacs that are extra soft and super stretchy",
+  "HP": 35,
+  "ATK": 55,
+  "DEF": 40,
+  "SATK": 50,
+  "SDEF": 50,
+  "SPD": 90,
+  "background":"electricbg",
+  "type2":"",
+  "types":"onetype"
+},
+
+{
+  "name": "squirtle",
+  "id": "007",
+  "image":"./Imagenes/squirtle.png",
+  "type": "water",
+  "weight": "9,0kg",
+  "height": "0,5m",
+  "moves": "Torrent Rain-Dish",
+  "description" : "When it retracts its long neck into its shell, it squirts out water with vigorous force.",
+  "HP": 44,
+  "ATK": 48,
+  "DEF": 65,
+  "SATK": 50,
+  "SDEF": 64,
+  "SPD": 43,
+  "background":"waterbg",
+  "type2":"",
+  "types":"onetype"
+}
+]
+
+}
+
