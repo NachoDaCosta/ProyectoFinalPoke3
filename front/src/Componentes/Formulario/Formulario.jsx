@@ -7,6 +7,7 @@ const Formulario=(props)=>{
         
         if (!localStorage.getItem("token")){
         navigate("/")
+        console.log("ingresa para acceder a esta funcion")
         }
     
     const addpokemon = () => {

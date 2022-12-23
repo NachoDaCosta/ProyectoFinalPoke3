@@ -655,6 +655,7 @@
 
     .white{
       filter: invert(93%) sepia(36%) saturate(462%) hue-rotate(206deg) brightness(108%) contrast(106%);
+      height: 32px;
     }
 
     .arrow-right{ /*  ROTACION DE FLECHA  */

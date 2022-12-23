@@ -13,6 +13,7 @@ const Pcard =(props)=>{
 
     const addToFavorite = pokemon => {
     if (!props.favorite.includes(pokemon)) props.setFavorite(props.favorite.concat(pokemon));
+    localStorage.setItem("favorite")
     console.log(pokemon.name);
     console.log(props.favorite)
     };
