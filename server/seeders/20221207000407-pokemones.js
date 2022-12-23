@@ -8,7 +8,7 @@ module.exports = {
   {
   "name": "Aron",
   "id": "304",
-  "image":"./Imagenes/aron.png",
+  "image":"/Imagenes/aron.png",
   "PrimaryType": "Steel",
   "weight": "60.0",
   "height": "0.4",
@@ -29,7 +29,7 @@ module.exports = {
 {
   "name": "Bulbasaur",
   "id": "001",
-  "image":"./Imagenes/bulbasaur.png",
+  "image":"/Imagenes/bulbasaur.png",
   "PrimaryType": "grass",
   "weight": "6.9",
   "height": "0.7",
@@ -50,7 +50,7 @@ module.exports = {
 {
   "name": "Butterfree",
   "id": "012",
-  "image":"./Imagenes/butterfree.png",
+  "image":"/Imagenes/butterfree.png",
   "PrimaryType": "bug",
   "weight": "32.0",
   "height": "1.1",
@@ -71,7 +71,7 @@ module.exports = {
   {
   "name": "Charmander",
   "id": "004",
-  "image":"./Imagenes/charmander.png",
+  "image":"/Imagenes/charmander.png",
   "PrimaryType": "fire",
   "weight": "8.5",
   "height": "0.6",
@@ -93,7 +93,7 @@ module.exports = {
 
   "name": "Ditto",
   "id": "132",
-  "image":"./Imagenes/ditto.png",
+  "image":"/Imagenes/ditto.png",
   "PrimaryType": "normal",
   "weight": "4.0",
   "height": "0.3",
@@ -114,7 +114,7 @@ module.exports = {
 {
   "name": "Gastly",
   "id": "092",
-  "image":"./Imagenes/gastly.png",
+  "image":"/Imagenes/gastly.png",
   "PrimaryType": "ghost",
   "weight": "0.1",
   "height": "1.3",
@@ -136,7 +136,7 @@ module.exports = {
 
   "name": "Mew",
   "id": "152",
-  "image":"./Imagenes/mew.png",
+  "image":"/Imagenes/mew.png",
   "PrimaryType": "Psychic",
   "weight": "4.0",
   "height": "0.4",
@@ -157,7 +157,7 @@ module.exports = {
 {
   "name": "Pikachu",
   "id": "025",
-  "image":"./Imagenes/pikachu.png",
+  "image":"/Imagenes/pikachu.png",
   "PrimaryType": "electric",
   "weight": "6.0",
   "height": "0.4",
@@ -178,7 +178,7 @@ module.exports = {
 {
   "name": "squirtle",
   "id": "007",
-  "image":"./Imagenes/squirtle.png",
+  "image":"/Imagenes/squirtle.png",
   "PrimaryType": "water",
   "weight": "9.0",
   "height": "0.5",

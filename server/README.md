@@ -16,6 +16,7 @@ Instrucciones para levatar el Backend
 4to paso:
 - Configurar nuestro archivo de servidor (Server/config/config.json) con los datos de nuestro programa de base de datos(PostreSQL).
 - Configurar un archivo .env con los datos de la base de datos
+-creamos una base de datos con el nombre "pokemons"
 
 5to paso:
 - Ejecutar el comando: "sequelize-cli db:migrate" para que se realizen las migraciones y los modelos
