@@ -15,6 +15,7 @@ function App() {
   const [time,setTime]=useState()
   const [favorite, setFavorite] = useState([])
 
+
   const logout=()=>{
     setIsLoggedIn(false)
     console.log("Cerré la sesion ")
@@ -61,6 +62,7 @@ function App() {
       <Route path="/addpokemon" element={<Formulario setTime={setTime}/>} />
       <Route path="/home/favorites" element={<Favorites 
                                     favorite={favorite}
+                                    setFavorite={setFavorite}
                                     pokemonList={pokemons} 
                                     isLoggedIn={isLoggedIn} 
                                     setIsLoggedIn={setIsLoggedIn} 
