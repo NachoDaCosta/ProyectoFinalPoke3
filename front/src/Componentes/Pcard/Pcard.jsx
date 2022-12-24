@@ -8,15 +8,14 @@ const Pcard =(props)=>{
     const navigate=useNavigate()
     const {id}=useParams()
     const [pokemon,setPokemon] = useState(props.pokemonList.find((pokemon)=>pokemon.id==id));//muestra el pokemon q coincida con la url
-    const [index, setIndex] = useState (null)               //index para pasar de carta
-    const pertenece=props.favorite.includes(pokemon)
-
+    const [index, setIndex] = useState (null)//index para pasar de carta
+    
     const addToFavorite = pokemon => {
     if (!props.favorite.includes(pokemon)){
         props.setFavorite(props.favorite.concat(pokemon))
+        const favoritos=localStorage.setItem("favoritelist",props.favorite)
     };
     console.log(props.favorite)
-    
     };
 
     const removeFavorite = pokemon => {
@@ -24,6 +23,7 @@ const Pcard =(props)=>{
     console.log(index);
     let temp = [...props.favorite.slice(0, index), ...props.favorite.slice(index + 1)];
     props.setFavorite(temp);
+    const favoritos=localStorage.setItem("favoritelist",props.favorite)
     };
 
     function pointsname(n){  //añdade ... si el nombre del pokemon es demasiado largo
@@ -48,6 +48,29 @@ const Pcard =(props)=>{
     function mayus(str) {//nos añade la primer letra en mayuscula
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
+
+    function heart(a,b){
+        if (a){
+            if(b){
+                return(
+                    <div className="heart" onClick={() => removeFavorite(pokemon)} >
+                        <img src="/Imagenes/red-heart.png" alt="" className="fav-icon"/>
+                    </div> 
+                )
+            }else if(!b){
+                return(
+                    <div className="heart" onClick={() => addToFavorite(pokemon)} >
+                        <img src="/Imagenes/black-heart.png" alt="" className="fav-icon"/>    
+                    </div>
+                )
+            }        
+        }else{
+            return(
+                <div></div>
+            )
+        }
+    }
+    
    
     useEffect(()=>{   //si no se encuentra el pokemon 404
         const poke=props.pokemonList.find((pokemon)=>pokemon.id==id)
@@ -68,11 +91,6 @@ const Pcard =(props)=>{
         }
     },[pokemon,props.pokemonList])
 
-    
-    
-    
-    
-   
       
     return(
         
@@ -86,14 +104,10 @@ const Pcard =(props)=>{
                     </Link>
 
                     <div className="pokemon-card-name">{mayus(pointsname(pokemon.name))}</div> {/* Nombre del Pokemon*/}
-                    {pertenece ?
-                     <div className="heart" onClick={() => removeFavorite(pokemon)} >
-                         <img src="/Imagenes/red-heart.png" alt="" className="fav-icon"/>
-                    </div> :
-                    <div className="heart" onClick={() => addToFavorite(pokemon)} >
-                        <img src="/Imagenes/black-heart.png" alt="" className="fav-icon"/>
-                    </div>
+                    
+                    {heart(props.isLoggedIn,props.favorite.includes(pokemon))   
                     }
+                    
                     <div className="marginNumber"> {/* numero del pokemon*/}
                         #{ceros(pokemon.id) }
                     </div>

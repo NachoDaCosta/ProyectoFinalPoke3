@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import Cargando from "../Cargando/Cargando";
 import Navbar from "../Nav";
 
-
 const Favorites = (props) => {
     
     const [orderByNumber,setOrderByNumber] = useState(true)
@@ -42,6 +41,7 @@ const Favorites = (props) => {
   function changeOrder (){  
     setOrderByNumber(!orderByNumber)
   }
+  console.log("estos son",props.favorite)
 
     return(
   
@@ -55,8 +55,7 @@ const Favorites = (props) => {
 
           {loading ? (<Cargando />):(
             <div className="home-second-row">
-              <div className="pokeList" >
-                
+              <div className="pokeList" > 
               
               {
                 props.favorite.filter(pokemon=> pokemon.name.toLowerCase().includes(inputSearch.toLowerCase())).map((pokemon,key)=>{

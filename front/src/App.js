@@ -13,13 +13,15 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("token")? true : false);
   const [user, setUser] = useState([])
   const [time,setTime]=useState()
-  const [favorite, setFavorite] = useState([])
+  const [favorite, setFavorite] = useState(localStorage.getItem("favoritelist") ?? [])
 
 
   const logout=()=>{
     setIsLoggedIn(false)
     console.log("Cerré la sesion ")
     localStorage.removeItem("token");
+    localStorage.removeItem("favoritelist");
+    
   }
 
   const getpokemons = () => {
@@ -36,10 +38,6 @@ function App() {
   console.log("se está ejecutando")
   }, [time]) 
 
-  useEffect(() => {
-    
-    }, [time],[favorite]) 
-
   return (
   <BrowserRouter>
     <Routes>
@@ -50,6 +48,7 @@ function App() {
       logout={logout}/>}/>
       
       <Route exact path="/:id" element={<Pcard
+      isLoggedIn={isLoggedIn} 
       favorite={favorite}
       setFavorite={setFavorite}
       pokemonList={pokemons}/>} /> {/*Pokemon individual */}
