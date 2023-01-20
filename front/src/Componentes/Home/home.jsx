@@ -1,10 +1,10 @@
 import React from "react"
 import Navbar from "./Nav"
-import Pokemon from "./Pokemon"
+import Pokemon from "../Pokemon"
 import { useState, useEffect } from 'react';
-import Añadir from "./añadir/Añadir";
+import Añadir from "../añadir/Añadir";
 import { Link } from "react-router-dom";
-import Cargando from "./Cargando/Cargando";
+import Cargando from "../Cargando/Cargando";
 
 
 const Home = (props) => {
@@ -52,6 +52,8 @@ const Home = (props) => {
       )
     }
   }
+
+
    
   
 
@@ -63,6 +65,7 @@ const Home = (props) => {
             setInputSearch={setInputSearch} 
             orderByNumber={orderByNumber} 
             changeOrder={changeOrder}
+            logout={props.logout}
             
           /> 
 
@@ -84,10 +87,6 @@ const Home = (props) => {
                 <Link to='/home/favorites' className="div-favorites">
                   <span className="heart-favs">❤️</span>
                   <span>Favorites</span>
-                </Link>
-                <Link to='/login' >
-                <span className="logout" onClick={props.logout}>{isLoggedIn ? 'Logout' : 'Ingresa'}
-                </span>
                 </Link>
               </div>
             </div>)}

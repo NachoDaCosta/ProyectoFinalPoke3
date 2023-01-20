@@ -104,11 +104,11 @@ const Pcard =(props)=>{
                     </Link>
 
                     <div className="pokemon-card-name">{mayus(pointsname(pokemon.name))}</div> {/* Nombre del Pokemon*/}
-                    
+                    <div className="marginNumber">
                     {heart(props.isLoggedIn,props.favorite.includes(pokemon))   
                     }
                     
-                    <div className="marginNumber"> {/* numero del pokemon*/}
+                     {/* numero del pokemon*/}
                         #{ceros(pokemon.id) }
                     </div>
                 </div>
@@ -134,18 +134,20 @@ const Pcard =(props)=>{
                 </div>
             </div>
             
-            <div className="modal-bottom"> {/* Grilla de la parte blanca de la carta*/}
-
-            {pokemon.SecondaryType==="" ? <div className={`modal-types`}> 
-                    <span className={`modal-type ${pokemon.PrimaryType} font-type` }>{mayus(pokemon.PrimaryType)}</span>
-                </div>:
-                <div className={`modal-types`}> 
-                    <span className={`modal-type ${pokemon.PrimaryType}`}>{mayus(pokemon.PrimaryType)}</span>
-                    <span className={`modal-type ${pokemon.SecondaryType}`}>{mayus(pokemon.SecondaryType)}</span>
-                </div>}
-                
-  
-                <div className={`bolder stats-card-background ${pokemon.PrimaryType} martop`}>  
+            <div className="modal-bottom">
+                 {/* Grilla de la parte blanca de la carta*/}
+                <div className="bottom-top">
+                    {pokemon.SecondaryType==="" ? <div className={`modal-types`}> 
+                            <span className={`modal-type ${pokemon.PrimaryType}` }>{mayus(pokemon.PrimaryType)}</span>
+                        </div>:
+                        <div className={`modal-types`}> 
+                            <span className={`modal-type ${pokemon.PrimaryType}`}>{mayus(pokemon.PrimaryType)}</span>
+                            <span className={`modal-type ${pokemon.SecondaryType}`}>{mayus(pokemon.SecondaryType)}</span>
+                        </div>}
+                </div>
+            <div className="bottom-bottom"> 
+            <div className="first-column-bottom">
+                <div className={`bolder stats-card-background ${pokemon.PrimaryType} about`}>  
                     About
                 </div>
 
@@ -153,7 +155,9 @@ const Pcard =(props)=>{
                 <div className="modal-info"> {/*  grilla con la informacion de mi pokemon (no stats)*/}
                     <div className="tworows line">
                         <div className="twocols">
-                            <div><img src="/Imagenes/Weight.svg" alt=""/></div>
+                            <div >
+                                <img src="/Imagenes/Weight.svg" alt="" className="mini-img-card"/>
+                            </div>
                             <div >{pokemon.weight} Kg</div>    
                         </div>
                         <div className="whm">Weight</div>
@@ -161,8 +165,10 @@ const Pcard =(props)=>{
 
                     <div className="tworows line">
                         <div className="twocols">
-                            <div><img src="/Imagenes/height.svg" alt=""/></div>
-                            <div>{pokemon.height} m</div>
+                            <div>
+                                <img src="/Imagenes/height.svg" alt=""/>
+                            </div>
+                            <div className="tworows info-card">{pokemon.height} m</div>
                         </div>
                         <div className="whm">Height</div>
                     </div>
@@ -172,23 +178,24 @@ const Pcard =(props)=>{
                                 <div>{mayus(pokemon.moves1)} </div>
                                 <div>{mayus(pokemon.moves2)} </div>
                             </div>
-                            <div className="whm moves">Moves</div>
+                            <div className="whm">Moves</div>
                     </div>
                 </div>
                 <div className="modal-description "> {mayus(pokemon.description)}</div>{/*DIV CON DESCRIPCION DEL POKEMON */}
-
+            </div>
+            <div className="second-column-bottom">
                 <div className={`bolder stats-card-background ${pokemon.PrimaryType}`}>Base stats</div>{/*DIV CON TEXTO DE STATS*/}
-                <div className="modal-stats">
-                    <div className="line2">
-                        <ul className={`stats-card-background ${pokemon.PrimaryType}`}> 
-                            <li>HP</li>
-                            <li>ATK</li>
-                            <li>DEF</li>
-                            <li>SATK</li>
-                            <li>SDEF</li>
-                            <li>SPD</li>
-                        </ul>
-                    </div>
+                    <div className="modal-stats">
+                        <div className="line2">
+                            <ul className={`stats-card-background ${pokemon.PrimaryType} ul-stats`}> 
+                                <li>HP</li>
+                                <li>ATK</li>
+                                <li>DEF</li>
+                                <li>SATK</li>
+                                <li>SDEF</li>
+                                <li>SPD</li>
+                            </ul>
+                        </div>
                     <div className="centrado">
                         <ul>  {/*DIV CON LA INFO DE ESTADISTICAS DEL POKEMON*/}
                             <li>{`${pokemon.hp}`}</li>
@@ -208,6 +215,8 @@ const Pcard =(props)=>{
                         <ProgressBar now={pokemon.spd} className={`${pokemon.PrimaryType} progressBar`}/>
                     </div>
                 </div>
+            </div>
+            </div>
             </div>
         </div>}
     </>

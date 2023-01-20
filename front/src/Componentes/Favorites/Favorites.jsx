@@ -1,10 +1,9 @@
 import React from "react"
 import Pokemon from "../Pokemon";
 import { useState, useEffect } from 'react';
-import Añadir from "../añadir/Añadir";
 import { Link } from "react-router-dom";
 import Cargando from "../Cargando/Cargando";
-import Navbar from "../Nav";
+import Navbar from "../Home/Nav";
 
 const Favorites = (props) => {
     
@@ -41,6 +40,12 @@ const Favorites = (props) => {
   function changeOrder (){  
     setOrderByNumber(!orderByNumber)
   }
+  const logout=()=>{
+    props.setIsLoggedIn(false)
+    console.log("Cerré la sesion ")
+    localStorage.removeItem("token");
+    localStorage.removeItem("favoritelist");
+  }
   console.log("estos son",props.favorite)
 
     return(
@@ -72,10 +77,7 @@ const Favorites = (props) => {
                   <span className="heart-favs">❤️</span>
                   <span>Favorites</span>
                 </Link>
-                <Link to='/login' >
-                <span className="logout" onClick={props.logout}>{props.isLoggedIn ? 'Logout' : 'Ingresa'}
-                </span>
-                </Link>
+                
               </div>
             </div>)}
           

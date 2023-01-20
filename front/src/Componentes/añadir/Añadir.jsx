@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Añadir=()=>{
     return(
         <Link to="/addpokemon">
-            <div className="add-container">
+            <div className="add-container zoom">
                 <div className="white-background">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/769px-Pokebola-pokeball-png-0.png" alt="" className="add-image"/>
                 </div>

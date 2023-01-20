@@ -3,19 +3,6 @@ import { Link } from "react-router-dom";
 
 const Navbar =(props)=> {
     console.log(props.inputSearch)//control de lo q se escribe
-    function checkinput(texto){
-    if (texto=="" )
-    {
-      return(
-        <img src="https://assets.stickpng.com/images/59cfc4d2d3b1936210a5ddc7.png" alt=""  className="finder-center"/>
-      )
-    }else{
-        return(
-             <img src="https://assets.stickpng.com/images/59cfc4d2d3b1936210a5ddc7.png" alt=""  className="finder-left"/>
-            
-        )
-    }
-  }
     return(
 
       
@@ -35,17 +22,22 @@ const Navbar =(props)=> {
                 <div className="nav-columns2">{/*Div con el filter */}
                     <div className="hashtag centrado" onClick={()=>props.changeOrder()}>{props.orderByNumber ? '#' : 'AZ'} </div>
                     <div><img src="../Imagenes/Arrow.svg" alt=""  className="nav-filter"/></div>
+                    <Link to='/login' className="login-button">
+                    <span className="logout" onClick={props.logout}>{props.isLoggedIn ? 'Logout' : 'Login'}
+                    </span>
+                </Link>
                 </div>
 
                 
                 
             </div>
 
-            <div className="nav-second-row"> {/*Div con filter */}
-            {checkinput(props.inputSearch)}
-            <input type="search" placeholder="Search" onChange={(e)=>props.setInputSearch(e.target.value) }/>
+            <div className="nav-second-row"> 
+            
+            <input type="search" placeholder="🔍  Find a Pokemon" onChange={(e)=>props.setInputSearch(e.target.value)} className="input-nav"/>
 
             </div>
+            
         </div>
     )
 }
