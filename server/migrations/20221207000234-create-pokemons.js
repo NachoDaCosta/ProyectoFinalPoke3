@@ -9,12 +9,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id: {
-        type: Sequelize.INTEGER
-      },
       name: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING(30)
       },
       PrimaryType: {
         allowNull: false,
@@ -33,42 +30,42 @@ module.exports = {
       },
       moves1: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING(50)
       },
       moves2: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(50)
       },
       description: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING(150)
       },
       hp: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER(100)
       },
       atk: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER(100)
       },
       def: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER(100)
       },
       satk: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER(100)
       },
       sdef: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER(100)
       },
       spd: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER(100)
       },
       image: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING(10000)
       },
       createdAt: {
         allowNull: false,

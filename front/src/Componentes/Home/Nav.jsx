@@ -22,10 +22,7 @@ const Navbar =(props)=> {
                 <div className="nav-columns2">{/*Div con el filter */}
                     <div className="hashtag centrado" onClick={()=>props.changeOrder()}>{props.orderByNumber ? '#' : 'AZ'} </div>
                     <div><img src="../Imagenes/Arrow.svg" alt=""  className="nav-filter"/></div>
-                    <Link to='/login' className="login-button">
-                    <span className="logout" onClick={props.logout}>{props.isLoggedIn ? 'Logout' : 'Login'}
-                    </span>
-                </Link>
+                    
                 </div>
 
                 

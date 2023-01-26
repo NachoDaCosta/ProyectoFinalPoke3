@@ -4,7 +4,8 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import { useParams } from "react-router-dom";
 
 
-const Pcard =(props)=>{  
+const Pcard =(props)=>
+{  
     const navigate=useNavigate()
     const {id}=useParams()
     const [pokemon,setPokemon] = useState(props.pokemonList.find((pokemon)=>pokemon.id==id));//muestra el pokemon q coincida con la url
@@ -17,6 +18,71 @@ const Pcard =(props)=>{
     };
     console.log(props.favorite)
     };
+
+    function emoji(a){
+        if (a==="grass"){
+            return(
+                "🌿"
+            )
+        }
+        else if(a==="poison"){
+            return(
+                "🧪"
+            )
+        }
+        else if(a=== "fire"){
+            return(
+                "🔥"
+            )
+        }
+        else if(a==="ghost"){
+            return(
+                "👻"
+            )
+        }
+        else if( a==="water"){
+            return(
+                "💧"
+            )
+        }
+        else if( a==="electric"){
+            return(
+                "⚡"
+            )
+        }
+        else if( a==="rock"){
+            return(
+                "🪨"
+            )
+        }
+        else if( a==="steel"){
+            return(
+                "🔩"
+            )
+        }
+        else if( a==="psychic"){
+            return(
+                "🌸"
+            )
+        }
+        else if( a==="normal"){
+            return(
+                "⚪"
+            )
+        }
+        else if( a==="bug"){
+            return(
+                "🦋"
+            )
+        }
+        else if( a==="flying"){
+            return(
+                "🐦"
+            )
+        }
+        
+    }
+
 
     const removeFavorite = pokemon => {
     let index = props.favorite.indexOf(pokemon);
@@ -33,6 +99,7 @@ const Pcard =(props)=>{
         return(n)
     }
     }
+
     function ceros(n){ //nos añade ceros dependiendo el id del pokemon
             if (pokemon.id<10){
             return("00"+pokemon.id)
@@ -95,7 +162,8 @@ const Pcard =(props)=>{
     return(
         
         <>
-        {pokemon && <div className={`Modal-grid ${pokemon.PrimaryType}`}> {/* Grilla General del Pokemon*/}
+        {pokemon && 
+        <div className={`Modal-grid ${pokemon.PrimaryType}`}> {/* Grilla General del Pokemon*/}
             <div className="modal-name"> {/*Grilla que contiene la informacion de la parte de arriba */}
                 <div className="modal-1row">
 
@@ -104,11 +172,9 @@ const Pcard =(props)=>{
                     </Link>
 
                     <div className="pokemon-card-name">{mayus(pointsname(pokemon.name))}</div> {/* Nombre del Pokemon*/}
-                    <div className="marginNumber">
-                    {heart(props.isLoggedIn,props.favorite.includes(pokemon))   
-                    }
                     
-                     {/* numero del pokemon*/}
+                    <div className="marginNumber">
+                    {heart(props.isLoggedIn,props.favorite.includes(pokemon))}  {/* numero del pokemon*/}
                         #{ceros(pokemon.id) }
                     </div>
                 </div>
@@ -134,6 +200,10 @@ const Pcard =(props)=>{
                 </div>
             </div>
             
+
+
+
+            
             <div className="modal-bottom">
                  {/* Grilla de la parte blanca de la carta*/}
                 <div className="bottom-top">
@@ -141,25 +211,26 @@ const Pcard =(props)=>{
                             <span className={`modal-type ${pokemon.PrimaryType}` }>{mayus(pokemon.PrimaryType)}</span>
                         </div>:
                         <div className={`modal-types`}> 
-                            <span className={`modal-type ${pokemon.PrimaryType}`}>{mayus(pokemon.PrimaryType)}</span>
-                            <span className={`modal-type ${pokemon.SecondaryType}`}>{mayus(pokemon.SecondaryType)}</span>
+                            <span className={`modal-type ${pokemon.PrimaryType}`}>{mayus(pokemon.PrimaryType)} {emoji(pokemon.PrimaryType)}</span>
+                            <span className={`modal-type ${pokemon.SecondaryType}`}>{mayus(pokemon.SecondaryType)} {emoji(pokemon.SecondaryType)}</span>
                         </div>}
                 </div>
-            <div className="bottom-bottom"> 
-            <div className="first-column-bottom">
-                <div className={`bolder stats-card-background ${pokemon.PrimaryType} about`}>  
-                    About
-                </div>
 
+                <div className="bottom-bottom"> 
 
-                <div className="modal-info"> {/*  grilla con la informacion de mi pokemon (no stats)*/}
-                    <div className="tworows line">
-                        <div className="twocols">
-                            <div >
-                                <img src="/Imagenes/Weight.svg" alt="" className="mini-img-card"/>
+                    <div className="stats-pcard">{/*DIV con peso y eso */}
+                    <div className={`bolder stats-card-background ${pokemon.PrimaryType} about`}>  
+                        About
+                    </div>
+
+                    <div className="modal-info"> {/*  grilla con la informacion de mi pokemon (no stats)*/}
+                        <div className="tworows line">
+                            <div className="twocols">
+                                <div >
+                                    <img src="/Imagenes/Weight.svg" alt="" className="mini-img-card"/>
+                                </div>
+                                <div >{pokemon.weight} Kg</div>    
                             </div>
-                            <div >{pokemon.weight} Kg</div>    
-                        </div>
                         <div className="whm">Weight</div>
                     </div>
 
@@ -168,10 +239,10 @@ const Pcard =(props)=>{
                             <div>
                                 <img src="/Imagenes/height.svg" alt=""/>
                             </div>
-                            <div className="tworows info-card">{pokemon.height} m</div>
-                        </div>
-                        <div className="whm">Height</div>
+                        <div className="tworows info-card">{pokemon.height} m</div>
                     </div>
+                    <div className="whm">Height</div>
+                </div>
 
                     <div className="tworows">
                             <div >
@@ -181,42 +252,48 @@ const Pcard =(props)=>{
                             <div className="whm">Moves</div>
                     </div>
                 </div>
-                <div className="modal-description "> {mayus(pokemon.description)}</div>{/*DIV CON DESCRIPCION DEL POKEMON */}
-            </div>
-            <div className="second-column-bottom">
-                <div className={`bolder stats-card-background ${pokemon.PrimaryType}`}>Base stats</div>{/*DIV CON TEXTO DE STATS*/}
-                    <div className="modal-stats">
-                        <div className="line2">
-                            <ul className={`stats-card-background ${pokemon.PrimaryType} ul-stats`}> 
-                                <li>HP</li>
-                                <li>ATK</li>
-                                <li>DEF</li>
-                                <li>SATK</li>
-                                <li>SDEF</li>
-                                <li>SPD</li>
-                            </ul>
-                        </div>
-                    <div className="centrado">
-                        <ul>  {/*DIV CON LA INFO DE ESTADISTICAS DEL POKEMON*/}
-                            <li>{`${pokemon.hp}`}</li>
-                            <li>{`${pokemon.atk}`}</li>
-                            <li>{`${pokemon.def}`}</li>
-                            <li>{`${pokemon.satk}`}</li>
-                            <li>{`${pokemon.sdef}`}</li>
-                            <li>{`${pokemon.spd}`}</li>
-                        </ul>
                     </div>
-                    <div className="modal-range">  {/*DIV CON LAS STATS EN BARRAS DEL POKEMON */}
-                        <ProgressBar now={pokemon.hp} className={`${pokemon.PrimaryType} progressBar`}  />
-                        <ProgressBar now={pokemon.atk} className={`${pokemon.PrimaryType} progressBar`}/>
-                        <ProgressBar now={pokemon.def} className={`${pokemon.PrimaryType} progressBar`}/>
-                        <ProgressBar now={pokemon.satk} className={`${pokemon.PrimaryType} progressBar`}/>
-                        <ProgressBar now={pokemon.sdef} className={`${pokemon.PrimaryType} progressBar`}/>
-                        <ProgressBar now={pokemon.spd} className={`${pokemon.PrimaryType} progressBar`}/>
+                     
+                    <div className="modal-description ">
+                        <div className="title-description">Description</div>  {/*DIV CON DESCRIPCION DEL POKEMON */}
+                         <div>{mayus(pokemon.description)}</div>
+                    </div>
+                
+                <div className="second-column-bottom">
+                    <div className={`bolder stats-card-background ${pokemon.PrimaryType}`}>Base stats</div>{/*DIV CON TEXTO DE STATS*/}
+                        <div className="modal-stats">
+                            <div className="line2">
+                                <ul className={`stats-card-background ${pokemon.PrimaryType} ul-stats`}> 
+                                    <li>HP</li>
+                                    <li>ATK</li>
+                                    <li>DEF</li>
+                                    <li>SATK</li>
+                                    <li>SDEF</li>
+                                    <li>SPD</li>
+                                </ul>
+                            </div>
+                            <div className="centrado">
+                                <ul>  {/*DIV CON LA INFO DE ESTADISTICAS DEL POKEMON*/}
+                                    <li>{`${pokemon.hp}`}</li>
+                                    <li>{`${pokemon.atk}`}</li>
+                                    <li>{`${pokemon.def}`}</li>
+                                    <li>{`${pokemon.satk}`}</li>
+                                    <li>{`${pokemon.sdef}`}</li>
+                                    <li>{`${pokemon.spd}`}</li>
+                                </ul>
+                            </div>
+
+                            <div className="modal-range">  {/*DIV CON LAS STATS EN BARRAS DEL POKEMON */}
+                                <ProgressBar now={pokemon.hp} className={`${pokemon.PrimaryType} progressBar`}  />
+                                <ProgressBar now={pokemon.atk} className={`${pokemon.PrimaryType} progressBar`}/>
+                                <ProgressBar now={pokemon.def} className={`${pokemon.PrimaryType} progressBar`}/>
+                                <ProgressBar now={pokemon.satk} className={`${pokemon.PrimaryType} progressBar`}/>
+                                <ProgressBar now={pokemon.sdef} className={`${pokemon.PrimaryType} progressBar`}/>
+                                <ProgressBar now={pokemon.spd} className={`${pokemon.PrimaryType} progressBar`}/>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            </div>
             </div>
         </div>}
     </>

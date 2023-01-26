@@ -88,6 +88,10 @@ const Home = (props) => {
                   <span className="heart-favs">❤️</span>
                   <span>Favorites</span>
                 </Link>
+                <Link to='/login' className="login-button">
+                    <span className="logout" onClick={props.logout}>{props.isLoggedIn ? 'Logout' : 'Login'}
+                    </span>
+                </Link>
               </div>
             </div>)}
           

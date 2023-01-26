@@ -38,18 +38,19 @@ const registerUser = () => {
         window.location.href = window.location.href;
     }
 
+    
 
     return (
             
             <div className="login" >
                 <div className='divs-login'>
-                    <Link to="/" className='home-login'>
+                    <Link to="/" className='home-login' >
                         <div>
-                            <img src='./imagenes/home.png' alt=''/>
+                            <img src='./imagenes/home.png' alt='' />
                         </div>
                         <div>Home</div>
                     </Link>
-                    <Link to="/login" className='home-login'>
+                    <Link to="/login" className='home-login' >
                         <div>Login</div>
                     </Link>
                     </div>
@@ -64,10 +65,10 @@ const registerUser = () => {
                         <div className="datos" id="formulario">
                             <div className="formu">
                                 <label  className="centrar message-inputs">Enter your email 📧 </label>
-                                <input type="text" id='email' name="email" placeholder="Email" form='email' className="input_large"/>
+                                <input type="text" id='email' name="email" placeholder="Email@Example.com" form='email' className="input_large"/>
                             </div>
                             <div className="formu">
-                                <label  className="centrar message-inputs">Enter your password 🔒 </label>
+                                <label  className="centrar message-inputs">Create a password 🔒 </label>
                                 <input type="password" id='password' name="password" form='password' placeholder="Password"  className="input_large"/>
                                 
                             </div>

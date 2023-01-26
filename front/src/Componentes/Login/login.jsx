@@ -24,7 +24,7 @@ const loginUser = () => {
       console.log(data)
       props.setUser(data)
         if(data.error===null){
-        message="Bienvenido a la Pokedex"
+        message="Welcome to the Pokedex"
         localStorage.setItem("mensaje",message)
         props.setIsLoggedIn(true)
         localStorage.setItem("token", JSON.stringify(data.token));
