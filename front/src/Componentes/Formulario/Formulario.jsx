@@ -72,7 +72,7 @@ const Formulario=(props)=>{
                     
 
                    
-                        <div>Primary Type:</div>
+                        <div>1° Type:</div>
                         <div className="align-input-stats">
                              {/* <input type="text" id='pk-ptype' name="pk-ptype" form='pk-ptype' placeholder="Pokemon Primary Type" className="input-type"/>*/}
                              <select name="select" id='pk-ptype' className="select-type">
@@ -93,7 +93,7 @@ const Formulario=(props)=>{
                     
 
                    
-                        <div>Secondary Type:</div>
+                        <div>2° Type:</div>
                         <div className="align-input-stats">
                             <select name="select" id='pk-stype' className="select-type">
                                 <option value="">None</option>
@@ -114,25 +114,25 @@ const Formulario=(props)=>{
                         </div>
 
                     
-                        <div>Weight:</div>
-                        <div>
-                            <input type="text" id='pk-weight' name="pk-weight" form='pk-weight' placeholder="Add a value" className="input-name"/>
+                        <div >Weight:</div>
+                        <div className="align-input-stats">
+                            <input type="text" id='pk-weight' name="pk-weight" form='pk-weight' placeholder="Add a value" className="input-name "/>
                         </div>
                     
                         <div>Height:</div>
-                        <div>
+                        <div className="align-input-stats">
                              <input type="text" id='pk-height' name="pk-height" form='pk-height' placeholder="Add a value" className="input-name"/>
                         </div>
                         <div>Move1:</div>
-                        <div>
+                        <div className="align-input-stats">
                              <input type="text" id='pk-move1' name="pk-move" form='pk-move' placeholder="Add a value" className="input-name"/>
                         </div>
-                        <div>Move2:</div>
-                        <div>
+                        <div >Move2:</div>
+                        <div className="align-input-stats">
                              <input type="text" id='pk-move2' name="pk-move" form='pk-move' placeholder="Add a value" className="input-name"/>
                         </div>
                         <div>Description:</div>
-                        <div>
+                        <div className="align-input-stats">
                             <input type="text" id='pk-description' name="pk-description" 
                             form='pk-description' placeholder="Add a pokemon description" className="input-description"/>
                         </div>

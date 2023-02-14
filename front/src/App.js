@@ -40,13 +40,13 @@ function App() {
   return (
   <BrowserRouter>
     <Routes>
-      <Route exact path="/" element={<Home 
+      <Route path="/" element={<Home 
       logout={logout}
       pokemonList={pokemons} 
       isLoggedIn={isLoggedIn} 
       setIsLoggedIn={setIsLoggedIn} />}/>
       
-      <Route  path="/:id" 
+      <Route path="/:id" 
       element={<Pcard
         isLoggedIn={isLoggedIn} 
         favorite={favorite}

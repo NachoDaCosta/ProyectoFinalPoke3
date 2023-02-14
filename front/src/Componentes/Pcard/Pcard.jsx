@@ -19,69 +19,7 @@ const Pcard =(props)=>
     console.log(props.favorite)
     };
 
-    function emoji(a){
-        if (a==="grass"){
-            return(
-                "🌿"
-            )
-        }
-        else if(a==="poison"){
-            return(
-                "🧪"
-            )
-        }
-        else if(a=== "fire"){
-            return(
-                "🔥"
-            )
-        }
-        else if(a==="ghost"){
-            return(
-                "👻"
-            )
-        }
-        else if( a==="water"){
-            return(
-                "💧"
-            )
-        }
-        else if( a==="electric"){
-            return(
-                "⚡"
-            )
-        }
-        else if( a==="rock"){
-            return(
-                "🪨"
-            )
-        }
-        else if( a==="steel"){
-            return(
-                "🔩"
-            )
-        }
-        else if( a==="psychic"){
-            return(
-                "🌸"
-            )
-        }
-        else if( a==="normal"){
-            return(
-                "⚪"
-            )
-        }
-        else if( a==="bug"){
-            return(
-                "🦋"
-            )
-        }
-        else if( a==="flying"){
-            return(
-                "🐦"
-            )
-        }
-        
-    }
+ 
 
 
     const removeFavorite = pokemon => {
@@ -211,8 +149,8 @@ const Pcard =(props)=>
                             <span className={`modal-type ${pokemon.PrimaryType}` }>{mayus(pokemon.PrimaryType)}</span>
                         </div>:
                         <div className={`modal-types`}> 
-                            <span className={`modal-type ${pokemon.PrimaryType}`}>{mayus(pokemon.PrimaryType)} {emoji(pokemon.PrimaryType)}</span>
-                            <span className={`modal-type ${pokemon.SecondaryType}`}>{mayus(pokemon.SecondaryType)} {emoji(pokemon.SecondaryType)}</span>
+                            <span className={`modal-type ${pokemon.PrimaryType}`}>{mayus(pokemon.PrimaryType)} </span>
+                            <span className={`modal-type ${pokemon.SecondaryType}`}>{mayus(pokemon.SecondaryType)}</span>
                         </div>}
                 </div>
 

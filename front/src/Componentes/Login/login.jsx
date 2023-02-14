@@ -56,9 +56,7 @@ const loginUser = () => {
             
             <div className="login" >
                 <Link to="/" className='home-login'>
-                    <div>
-                        <img src='./imagenes/home.png' alt=''/>
-                    </div>
+                    <img src='./imagenes/home.png' alt=''/>
                     <div>Home</div>
                 </Link>
                 
@@ -69,25 +67,27 @@ const loginUser = () => {
                         <span className="register-text">¡Login!</span>
                     </div>
                     
-                        <div className="datos" id="formulario">
-                            <div className="formu">
-                                <label  className="centrar message-inputs">Enter your email 📧 </label>
-                                <input type="text" id='email' name="email" placeholder="Email" form='email' className="input_large"/>
+                    <div className="datos" id="formulario">
+                        <div className="formu">
+                            <label  className="centrar message-inputs">Enter your email 📧 </label>
+                            <input type="text" id='email' name="email" placeholder="Email" form='email' className="input_large"/>
+                        </div>
+
+                        <div className="formu">
+                            <label  className="centrar message-inputs">Enter your password 🔒 </label>
+                            <input type="password" id='password' name="password" form='password' placeholder="Password"  className="input_large"/>
+                            
+                        </div>
+
+                        <div className="enviar">
+                            <div className='buttons-login'>
+                                <button className="submit" type='sumbit' onClick={redirect}>Register</button>
+                                <button className="submit" type='sumbit' onClick={loginUser}>Login</button>
                             </div>
-                            <div className="formu">
-                                <label  className="centrar message-inputs">Enter your password 🔒 </label>
-                                <input type="password" id='password' name="password" form='password' placeholder="Password"  className="input_large"/>
-                                
-                            </div>
-                            <div className="enviar">
-                                <div className='buttons-login'>
-                                    <button className="submit" type='sumbit' onClick={redirect}>Register</button>
-                                    <button className="submit" type='sumbit' onClick={loginUser}>Login</button>
-                                </div>
-                                <span className='error'>{error}!</span>
-                            </div>
+                            <span className='error'>{error}!</span>
                         </div>
                     </div>
+                </div>
             </div>     
 
 )}

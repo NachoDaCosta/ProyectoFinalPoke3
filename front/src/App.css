@@ -14,11 +14,12 @@
 
   .zoom:hover {
     transform: scale(1.1);
-    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-  }
+   }
 
 
 .error{
+  display: flex;
+  text-align: center;
   color: rgb(43, 86, 142);
   font-weight: bolder;
   font-size: 32px;
@@ -113,14 +114,16 @@
   }
 
   .pokeList{  /*Grilla con pokemones*/
-    display: grid;
+    display: flex;
+    flex-direction: row;
     grid-template-columns: 1fr 1fr 1fr;
     height: 75vh;
+    flex-wrap: wrap;
     width: 100vw;
     gap: 30px 30px;
-    align-content: center;
-    justify-items: center;
-    overflow-y: scroll; 
+    align-content: flex-start;
+    justify-content: center;
+    overflow-y: scroll;
   }
   
   .fav-icon{
@@ -146,9 +149,7 @@
     justify-content: center;
   }
   
-  .spacing{
-    height: 120px;
-  }
+  
 
   .pokeList a {
     text-decoration: none;
@@ -180,11 +181,14 @@
     width: 100vw;
     font-size: 20px;
     background-image: url("https://preview.redd.it/9n4ogs4n0q911.jpg?width=1245&format=pjpg&auto=webp&s=e8a73661d1c96147d48132948b134c174f430dd4") ;
-    background-size: contain;
+    background-size: 100% 100%;
+
     font-weight: bold;
   }
 
   .form-inside{
+    display: grid;
+    grid-template-rows: 10% 90%;
     height: 80vh;
     width: 90vw;
     background-color: rgba(89, 89, 89, 0.5);
@@ -194,9 +198,11 @@
   }
 
   .form-inputs{
-    height: 73vh;
+    width: 100%;
+    height: 70vh;
     display: grid;
-    grid-template-rows: 10% 10% 25% 20% 20% 15%;
+    justify-items: center;
+    grid-template-rows: 60% 40%;
   }
 
   .form-4rows{
@@ -216,22 +222,22 @@
   }
 
   .input-name{
-    width: 200px;
+    width: 150px;
     height: 25px;
   }
 
   .input-type{
-    width: 160px;
+    width: 150px;
     height: 25px;
   }
 
   .input-description{
-    height: 80px;
-    width: 320px;
+    height: 25px;
+    width: 150px;
   }
 
   .input-stats{
-    width: 100px;
+    width: 150px;
     height: 25px;
   }
 
@@ -255,8 +261,7 @@
   }
 
   .add-form-text{
-    display: grid;
-    justify-content: center;
+    text-align: center;
     font-size: 30px;
   }
    
@@ -291,6 +296,8 @@
 
   .form-cols{
     display: grid;
+    width: 100%;
+    justify-content: center;
     grid-template-columns: 35% 65%;
   }
 
@@ -628,10 +635,9 @@
 /*----------------------------------------------------------------------*/
      .Modal-grid{
       display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 33% 67%;
+      grid-template-rows: 30% 70%;
       height: 100vh;
-      width: auto;
+      width: 100vw;
       border-radius: 15px;
      }
 
@@ -645,8 +651,7 @@
       background-repeat: no-repeat;
       background-position:95% 10%;
       display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 2fr;
+      grid-template-rows: 20% 80%;
       align-items: center;
       justify-items: center;
       color: white;
@@ -729,9 +734,32 @@
       height: 100%;
       width: 100%;
       display: grid;
-      grid-template-rows: 15% 5% 20% 15% 10% 35%;
+      grid-template-rows: 15% 85%;
       justify-items: center;
       align-items: center;
+    }
+
+    .bottom-top{
+      display: grid;
+      justify-items: center;
+      height: 100%;
+      width: 100%;
+    }
+    
+    .bottom-bottom{
+      justify-items: center;
+      display: grid;
+      grid-template-rows: 30% 25% 40%;
+      height: 100%;
+      width: 100%;
+    }
+
+    .stats-pcard {
+      display: grid;
+      justify-items: center;
+      grid-template-rows: 15% 85%;
+      width: 100%;
+      height: 100%;
     }
 
     .arrow{
@@ -763,7 +791,6 @@
       height: 100%;
       width: 40%;
       gap: 20px;
-      align-items: center;
       justify-content:center;
     }
 
@@ -776,10 +803,10 @@
 
     .modal-info{
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 33% 33% 33%;
+      align-content: center;
       height: 100%;
       width: 90%;
-      align-items: center;
       justify-items: center;
     }
 
@@ -789,6 +816,13 @@
       justify-items: center;
       height: 100%;
       width: 90%;
+    }
+
+    .second-column-bottom{
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-rows: 10% 90%;
     }
 
     .twocols{
@@ -814,7 +848,6 @@
       grid-template-rows: 1fr 1fr;
       align-items: center;
       justify-items: center;
-      height: 120px;
       width: 100%;
       text-align: center;
     }
@@ -825,7 +858,6 @@
 
     .line{
       border-right: 2px solid #e0e0e0;
-      height: 60%;
     }
     
     .line2{
@@ -887,9 +919,16 @@
 
   .register-text{
     color: rgb(7, 7, 7);
+    text-align: center;
+    font-weight: bolder;
+    font-size: 30px;
 
   }
   .login{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: 10% 80%;
     padding: 10px;
     height: 100vh;
     background-color:rgb(108, 162, 187) ;
@@ -901,10 +940,13 @@
     color: white;
   }
   .login-container {
-    position: relative;
+    display: grid ;
+    align-items: center;
+    grid-template-rows: 10% 90%;
     background-color: rgba(248, 248, 248, 0.5);
+    background-size: 100% 100%;
     border-radius: 15px;
-    top: 280px;
+    height: 80%;
     
   }
 
@@ -916,7 +958,6 @@
     align-items: center;
     gap: 15px;
     justify-content: flex-start;
-    position: absolute;
     text-decoration: none;
   }
 
@@ -928,27 +969,45 @@
     color: black;
     font-size: 20px;
     font-weight: bold;
-    display: grid;grid-template-rows: 1fr 1fr 1fr;
+    display: grid;
+    grid-template-rows: 30% 30% 30%;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .buttons-login {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
   }
 
   .submit{
     width: 100px;
+    height: 50px;
     color: black;
     border: 3px solid rgb(255, 255, 255);
     border-radius: 30px;
-    display: grid;
     font-weight: bolder;
     justify-items: center;
     background-color:rgb(255, 255, 255);
   }
 
-  .enviar{
+  .formu {
     display: grid;
-    align-content: center;
-    justify-content: center;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .enviar{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
   }
   .centrar{
     display: grid;
@@ -1173,15 +1232,12 @@
 
   .pokeList {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 70%;
-    height: 100%;
-    gap: 45px;
-    align-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height:100%;
+    gap: 40px;
     justify-items: center;
     overflow-y: auto;
-    
-  
   }
 
 
@@ -1879,7 +1935,9 @@
     height: 100%;
     width: 100vw;
     font-size: 30px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "about stats"
+    "description stats";
   }
 
   .first-column-bottom{
@@ -1892,6 +1950,7 @@
   }
 
   .second-column-bottom{
+    grid-area: stats;
     height: 100%;
     display: grid;
     justify-items: center;
@@ -1908,6 +1967,7 @@
   }
 
   .stats-pcard{
+    grid-area: about;
     display: grid;
     grid-template-rows: 20% 80%;
     width: 80%;
@@ -1970,6 +2030,7 @@
     justify-items: center;
     height: 100%;
     width: 90%;
+    grid-area: description;
   }
 
   .title-description{
