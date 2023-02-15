@@ -7,7 +7,6 @@ export const Register=(props)=>{
     const[errormsg,setError]=useState(localStorage.getItem("mensaje-register"))
     let navigate=useNavigate()
 
-
 const registerUser = () => {
     var registermsg=""
     const requestOption = {
@@ -25,8 +24,8 @@ const registerUser = () => {
         localStorage.setItem("mensaje-register",registermsg)
         navigate('/login')
         }
-        else{
-        registermsg="Email already in use, use another or login"
+        else {
+        registermsg="Las credenciales ingresadas no son validas"
         localStorage.setItem("mensaje-register",registermsg)
         recargar();
         }
@@ -38,12 +37,14 @@ const registerUser = () => {
         window.location.href = window.location.href;
     }
 
+   
+
     
 
     return (
             
             <div className="login" >
-                <div className='divs-login'>
+                <div className='divs-login' >
                     <Link to="/" className='home-login' >
                         <div>
                             <img src='./imagenes/home.png' alt='' />
@@ -53,7 +54,7 @@ const registerUser = () => {
                     <Link to="/login" className='home-login' >
                         <div>Login</div>
                     </Link>
-                    </div>
+                </div>
                 
                 
                 <div className='login-container'>
@@ -74,7 +75,7 @@ const registerUser = () => {
                             </div>
                             <div className="enviar">
                                 <button className="submit" type='sumbit' onClick={registerUser}>Register</button>
-                                <span className='error'>{errormsg}!</span>
+                                <span className='error'>{errormsg}</span>
                             </div>
                         </div>
                     </div>

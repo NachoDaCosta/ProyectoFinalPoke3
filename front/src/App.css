@@ -17,13 +17,13 @@
    }
 
 
-.error{
-  display: flex;
-  text-align: center;
-  color: rgb(43, 86, 142);
-  font-weight: bolder;
-  font-size: 32px;
-}
+  .error{
+    display: flex;
+    text-align: center;
+    color: rgb(43, 86, 142);
+    font-weight: bolder;
+    font-size: 27px;
+  }
 
 @media only screen and (max-width: 390px) {
   .NavBar {
@@ -939,6 +939,14 @@
     font-weight: bolder;
     color: white;
   }
+
+  .divs-login {
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+    gap: 20px;
+  }
+
   .login-container {
     display: grid ;
     align-items: center;
@@ -966,6 +974,7 @@
   }
   
   .datos{
+    height: 100%;
     color: black;
     font-size: 20px;
     font-weight: bold;
@@ -1258,6 +1267,9 @@
   }
 
   .select-type {
+    width: 250px;
+    height: 35px;     
+    font-size:25px !important;
     border: 2px solid rgba(0, 0, 0, 0.5);
     border-radius: 9px;
     text-align: center;
@@ -1351,14 +1363,14 @@
   }
 
   .input-type {
-    width: 160px;
-    height: 25px;
+    width: 250px;
+    height: 50px;
   }
 
   .input-description {
     font-size: 25px !important;
-    height: 80px;
-    width: 320px;
+    height: 45px;
+    width: 250px;
   }
 
   .boton-login{
@@ -1500,6 +1512,8 @@
     display: flex;
     justify-content: center;
   }
+
+  
 
   .error-message{
     font-size: 24px;
@@ -2192,6 +2206,8 @@
     text-decoration: none;
   }
 
+  
+
   .home-login:hover{
     color: white;
     cursor: pointer;
@@ -2202,6 +2218,7 @@
   }
 
   .datos {
+    height: 100%;
     color: black;
     font-size: 20px;
     font-weight: bold;
@@ -2275,6 +2292,14 @@
   .error-404 {
     display: grid;
     grid-template-rows: 0% 95%;
+  }
+
+  .error {
+    display: flex;
+    text-align: center;
+    color: rgb(43, 86, 142);
+    font-weight: bolder;
+    font-size: 35px;
   }
 
   .div-logout {

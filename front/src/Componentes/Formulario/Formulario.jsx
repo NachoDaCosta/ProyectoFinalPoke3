@@ -60,14 +60,14 @@ const Formulario=(props)=>{
                    
                         <div>Number:</div>
                         <div className="align-input-stats">
-                             <input type="text" id='pk-number' name="pk-number" form='pk-number' placeholder="Add a pokemon number" className="input-name"/>
+                             <input type="text" id='pk-number' name="pk-number" form='pk-number' placeholder="Add a number" className="input-name"/>
                         </div>
                     
 
                     
                         <div>Name:</div>
                         <div className="align-input-stats">
-                             <input type="text" id='pk-name' name="pk-name" form='pk-name' placeholder="Add a pokemon name" className="input-name"/>
+                             <input type="text" id='pk-name' name="pk-name" form='pk-name' placeholder="Add a name" className="input-name"/>
                         </div>
                     
 
@@ -134,7 +134,7 @@ const Formulario=(props)=>{
                         <div>Description:</div>
                         <div className="align-input-stats">
                             <input type="text" id='pk-description' name="pk-description" 
-                            form='pk-description' placeholder="Add a pokemon description" className="input-description"/>
+                            form='pk-description' placeholder="Add a description" className="input-description"/>
                         </div>
                         
                         
